@@ -332,8 +332,8 @@ func Configure(config *Config) (*Context, error) {
 	// Only Initialize if we are the first Context using the library
 	if numExistingContexts == 0 {
 		if err := instance.ctx.Initialize(); err != nil {
-			instance.ctx.Destroy()
-			return nil, errors.WithMessage(err, "failed to initialize PKCS#11 library")
+			//instance.ctx.Destroy()
+			//return nil, errors.WithMessage(err, "failed to initialize PKCS#11 library")
 		}
 	}
 	slots, err := instance.ctx.GetSlotList(true)
